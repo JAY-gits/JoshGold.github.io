@@ -1,57 +1,932 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Joshua Oseikhe Ailenubhi | Portfolio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 2rem;
-      background-color: #f4f4f4;
-      color: #333;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JoshGold Info Tech | Joshua A.</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8f5f1;
+    color: #181419;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* NAVIGATION */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.96);
+    border-bottom: 1px solid #e5ddd7;
+}
+
+.nav {
+    max-width: 1180px;
+    margin: auto;
+    min-height: 76px;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #641f35;
+}
+
+.logo small {
+    display: block;
+    font-size: 7px;
+    letter-spacing: 3px;
+    color: #777;
+    text-align: center;
+    margin-top: -4px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    font-size: 13px;
+    font-weight: bold;
+    color: #4d474b;
+}
+
+nav a:hover {
+    color: #641f35;
+}
+
+.nav-btn {
+    background: #641f35;
+    color: white;
+    padding: 11px 17px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* HERO */
+
+.hero {
+    max-width: 1180px;
+    min-height: 650px;
+    margin: auto;
+    padding: 75px 25px;
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.label {
+    color: #b7892f;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-size: clamp(43px, 6vw, 72px);
+    line-height: 1.02;
+    letter-spacing: -3px;
+    margin: 20px 0;
+}
+
+.hero h1 em {
+    color: #641f35;
+    font-family: Georgia, serif;
+}
+
+.hero p {
+    color: #706a6e;
+    max-width: 610px;
+    font-size: 16px;
+}
+
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 21px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.primary {
+    background: #641f35;
+    color: white;
+}
+
+.secondary {
+    background: white;
+    border: 1px solid #cfc5be;
+}
+
+.hero-photo {
+    max-width: 500px;
+    width: 100%;
+    margin-left: auto;
+}
+
+.photo-frame {
+    background: #d9bd76;
+    padding: 14px;
+    box-shadow: 0 30px 70px rgba(50,20,30,.18);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 530px;
+    object-fit: cover;
+    object-position: center top;
+    background: #ddd;
+}
+
+.photo-caption {
+    background: #181419;
+    color: white;
+    padding: 13px 17px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* INTRO */
+
+.dark-section {
+    background: #181419;
+    color: white;
+    padding: 65px 25px;
+}
+
+.dark-inner {
+    max-width: 1130px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+}
+
+.dark-inner h2 {
+    font-size: 34px;
+    line-height: 1.15;
+}
+
+.dark-inner p {
+    color: #c5bdc0;
+}
+
+/* SECTIONS */
+
+.section {
+    max-width: 1130px;
+    margin: auto;
+    padding: 100px 25px;
+}
+
+.section-title {
+    font-size: 45px;
+    line-height: 1.1;
+    margin: 15px 0 30px;
+}
+
+.section-title em {
+    color: #641f35;
+    font-family: Georgia, serif;
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.two-col p {
+    color: #706a6e;
+    margin-bottom: 17px;
+}
+
+/* SKILLS */
+
+.skills-section {
+    background: #eee6de;
+}
+
+.skills-inner {
+    max-width: 1130px;
+    margin: auto;
+    padding: 100px 25px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1px;
+    background: #ddd2ca;
+    margin-top: 35px;
+}
+
+.skill {
+    background: white;
+    padding: 30px;
+    min-height: 175px;
+}
+
+.skill-number {
+    color: #b7892f;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.skill h3 {
+    margin: 15px 0 7px;
+}
+
+.skill p {
+    color: #706a6e;
+    font-size: 13px;
+}
+
+/* PORTFOLIO */
+
+.portfolio {
+    background: #201a20;
+    color: white;
+}
+
+.portfolio-inner {
+    max-width: 1130px;
+    margin: auto;
+    padding: 100px 25px;
+}
+
+.portfolio .section-title {
+    color: white;
+}
+
+.portfolio .section-title em {
+    color: #d2a34b;
+}
+
+.portfolio-description {
+    color: #bdb4b8;
+    max-width: 600px;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.project {
+    background: #292329;
+    border: 1px solid #3c353a;
+    padding: 30px;
+    min-height: 215px;
+}
+
+.project small {
+    color: #c89b3d;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.project h3 {
+    margin: 30px 0 8px;
+}
+
+.project p {
+    color: #aaa1a5;
+    font-size: 13px;
+}
+
+/* EBOOK */
+
+.ebook-section {
+    background: #f5efe8;
+}
+
+.ebook {
+    max-width: 1130px;
+    margin: auto;
+    padding: 105px 25px;
+    display: grid;
+    grid-template-columns: 1fr .8fr;
+    gap: 75px;
+    align-items: center;
+}
+
+.ebook h2 {
+    font-size: 58px;
+    line-height: 1;
+    margin: 15px 0 22px;
+}
+
+.ebook h2 span {
+    color: #b7892f;
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
+.ebook-description {
+    color: #706a6e;
+    max-width: 520px;
+}
+
+.ebook ul {
+    list-style: none;
+    margin: 25px 0;
+}
+
+.ebook li {
+    margin: 9px 0;
+    font-size: 13px;
+}
+
+.ebook li::before {
+    content: "✓";
+    color: #b7892f;
+    font-weight: bold;
+    margin-right: 9px;
+}
+
+.price {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 25px 0;
+}
+
+.price span {
+    font-size: 12px;
+    color: #777;
+    font-weight: normal;
+}
+
+.book-cover {
+    display: flex;
+    justify-content: center;
+}
+
+.book-cover img {
+    width: min(100%, 420px);
+    max-height: 620px;
+    object-fit: contain;
+    box-shadow: 20px 30px 60px rgba(30,15,20,.2);
+}
+
+/* CONTACT */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.contact-card {
+    background: white;
+    border: 1px solid #e4dcd5;
+    padding: 25px;
+}
+
+.contact-card span {
+    color: #b7892f;
+    display: block;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.contact-card strong {
+    display: block;
+    margin-top: 9px;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+/* FOOTER */
+
+footer {
+    background: #181419;
+    color: white;
+    padding: 35px 25px;
+}
+
+.footer-inner {
+    max-width: 1130px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    color: #aaa;
+    font-size: 11px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px) {
+
+    nav {
+        display: none;
     }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    .hero,
+    .dark-inner,
+    .two-col,
+    .ebook {
+        grid-template-columns: 1fr;
     }
-    img {
-      width: 120px;
-      border-radius: 50%;
+
+    .hero {
+        padding: 60px 20px;
     }
-    h1 {
-      margin-top: 0.5rem;
+
+    .hero-photo {
+        margin: auto;
     }
-    a {
-      color: #0077cc;
-      text-decoration: none;
+
+    .photo-frame img {
+        height: 480px;
     }
-    .bio, .projects {
-      margin-top: 1.5rem;
+
+    .skills-grid,
+    .projects,
+    .contact-grid {
+        grid-template-columns: 1fr;
     }
-  </style>
+
+    .section,
+    .skills-inner,
+    .portfolio-inner,
+    .ebook {
+        padding: 75px 20px;
+    }
+
+    .section-title {
+        font-size: 38px;
+    }
+
+    .ebook h2 {
+        font-size: 48px;
+    }
+
+    .book-cover {
+        order: -1;
+    }
+
+    .footer-inner {
+        display: block;
+    }
+
+    footer p {
+        margin-top: 15px;
+    }
+}
+
+@media(max-width:480px) {
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .nav-btn {
+        font-size: 10px;
+        padding: 9px 11px;
+    }
+
+    .photo-frame img {
+        height: 390px;
+    }
+
+    .ebook h2 {
+        font-size: 42px;
+    }
+}
+</style>
 </head>
+
 <body>
-  <div class="container">
-    <img src="https://avatars.githubusercontent.com/u/178316285?v=4" alt="Joshua Oseikhe Ailenubhi">
-    <h1>Joshua Oseikhe Ailenubhi</h1>
-    <p>Email: joshgoldinfotech@gmail.com</p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/joshua-oseikhe-555a7723b" target="_blank">View Profile</a></p>
-    <div class="bio">
-      <h2>About Me</h2>
-      <p>Computer Science student passionate about AI/ML, Open Source, and creativity.</p>
+
+<header>
+<div class="nav">
+
+    <a href="#home" class="logo">
+        <span>JOSH</span>GOLD
+        <small>INFO TECH</small>
+    </a>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#work">Work</a>
+        <a href="#ebook">eBook</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#ebook" class="nav-btn">GET THE eBOOK</a>
+
+</div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div>
+
+    <div class="label">
+        DATA ANALYST • DIGITAL SKILLS • REMOTE WORK
     </div>
-    <div class="projects">
-      <h2>Projects & Achievements</h2>
-      <ul>
-        <li>Coming soon...</li>
-      </ul>
+
+    <h1>
+        Turning
+        <em>data, skills</em>
+        and curiosity into real opportunities.
+    </h1>
+
+    <p>
+        I'm Joshua A., a developing data analyst focused on
+        practical analysis, dashboards and digital skills,
+        while building useful resources for people entering
+        the digital-work space.
+    </p>
+
+    <div class="buttons">
+        <a href="#work" class="button primary">EXPLORE MY WORK</a>
+        <a href="#ebook" class="button secondary">VIEW MY eBOOK</a>
     </div>
-  </div>
+
+</div>
+
+
+<div class="hero-photo">
+
+    <div class="photo-frame">
+
+        <img
+            src="./assets/joshgold_analyst_pic.png"
+            alt="Joshua A. working on a laptop as a data analyst"
+        >
+
+    </div>
+
+    <div class="photo-caption">
+        Joshua A. • Data Analyst • JoshGold Info Tech
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- INTRO -->
+
+<section class="dark-section">
+
+<div class="dark-inner">
+
+<div>
+
+    <div class="label">01</div>
+
+    <h2>
+        Learning, building
+        & sharing the journey.
+    </h2>
+
+</div>
+
+<p>
+    From learning data analysis to building a credible
+    portfolio and exploring legitimate digital opportunities,
+    JoshGold Info Tech brings skills, projects and resources
+    together in one place.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+
+<div class="label">ABOUT JOSHUA A.</div>
+
+<div class="two-col">
+
+<div>
+
+    <h2 class="section-title">
+        Practical skills.
+        <em>Real-world focus.</em>
+    </h2>
+
+</div>
+
+<div>
+
+    <p>
+        I am Joshua A., a developing data analyst focused on
+        turning information into useful insights.
+    </p>
+
+    <p>
+        My learning path includes Excel, SQL, Python,
+        Power BI, Jupyter, data visualization, dashboards
+        and statistical data analysis.
+    </p>
+
+    <p>
+        I am also interested in helping beginners understand
+        the digital-work journey and build practical skills.
+    </p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section class="skills-section" id="skills">
+
+<div class="skills-inner">
+
+<div class="label">CORE SKILLS</div>
+
+<h2 class="section-title">
+    Tools I'm building with.
+</h2>
+
+<div class="skills-grid">
+
+<div class="skill">
+    <div class="skill-number">01</div>
+    <h3>Microsoft Excel</h3>
+    <p>Data cleaning, formulas, functions and analysis.</p>
+</div>
+
+<div class="skill">
+    <div class="skill-number">02</div>
+    <h3>SQL</h3>
+    <p>Querying and working with structured datasets.</p>
+</div>
+
+<div class="skill">
+    <div class="skill-number">03</div>
+    <h3>Power BI</h3>
+    <p>Dashboards, reporting and data storytelling.</p>
+</div>
+
+<div class="skill">
+    <div class="skill-number">04</div>
+    <h3>Python & Jupyter</h3>
+    <p>Practical analysis and data workflows.</p>
+</div>
+
+<div class="skill">
+    <div class="skill-number">05</div>
+    <h3>Data Visualization</h3>
+    <p>Turning numbers into clear visual insights.</p>
+</div>
+
+<div class="skill">
+    <div class="skill-number">06</div>
+    <h3>Statistical Analysis</h3>
+    <p>Understanding patterns, relationships and results.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WORK -->
+
+<section class="portfolio" id="work">
+
+<div class="portfolio-inner">
+
+<div class="label">PORTFOLIO</div>
+
+<h2 class="section-title">
+    Building work that
+    <em>can be understood.</em>
+</h2>
+
+<p class="portfolio-description">
+    My goal is to create useful and credible data projects
+    that demonstrate how I analyse problems and communicate
+    insights clearly.
+</p>
+
+<div class="projects">
+
+<div class="project">
+    <small>DATA 01</small>
+    <h3>Data Cleaning & Preparation</h3>
+    <p>Preparing raw datasets for analysis and reporting.</p>
+</div>
+
+<div class="project">
+    <small>DATA 02</small>
+    <h3>Dashboard & Reporting</h3>
+    <p>Presenting important metrics in a clear format.</p>
+</div>
+
+<div class="project">
+    <small>DATA 03</small>
+    <h3>Analysis & Insights</h3>
+    <p>Exploring patterns and communicating findings.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- EBOOK -->
+
+<section class="ebook-section" id="ebook">
+
+<div class="ebook">
+
+<div>
+
+    <div class="label">FEATURED eBOOK</div>
+
+    <h2>
+        From Zero
+        <span>to Remote Work</span>
+    </h2>
+
+    <p class="ebook-description">
+        A practical beginner's roadmap for building useful
+        skills, finding legitimate opportunities and becoming
+        ready for remote work.
+    </p>
+
+    <ul>
+
+        <li>Beginner-friendly guidance</li>
+        <li>Practical digital skills</li>
+        <li>Legitimate online-work opportunities</li>
+        <li>CV and portfolio guidance</li>
+
+    </ul>
+
+    <div class="price">
+        ₦3,500
+        <span>Digital eBook</span>
+    </div>
+
+    <a href="#" class="button primary" onclick="checkout(event)">
+        BUY THE eBOOK
+    </a>
+
+</div>
+
+
+<div class="book-cover">
+
+    <img
+        src="./assets/from_zero_to_remote_work.png"
+        alt="From Zero to Remote Work eBook cover"
+    >
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="section" id="contact">
+
+<div class="label">CONTACT</div>
+
+<h2 class="section-title">
+    Let's connect.
+</h2>
+
+<p style="color:#706a6e;">
+    For professional enquiries, digital-work conversations
+    or collaboration.
+</p>
+
+<div class="contact-grid">
+
+<a
+    class="contact-card"
+    href="mailto:joshgoldinfotech@gmail.com"
+>
+    <span>EMAIL</span>
+    <strong>joshgoldinfotech@gmail.com</strong>
+</a>
+
+<a
+    class="contact-card"
+    href="https://github.com/JAY-gits/JoshGold.github.io"
+    target="_blank"
+>
+    <span>GITHUB</span>
+    <strong>JoshGold.github.io</strong>
+</a>
+
+<a
+    class="contact-card"
+    href="https://www.tiktok.com/@jaycares4u"
+    target="_blank"
+>
+    <span>TIKTOK</span>
+    <strong>@jaycares4u</strong>
+</a>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div class="footer-inner">
+
+    <div class="logo">
+        <span>JOSH</span>GOLD
+        <small>INFO TECH</small>
+    </div>
+
+    <p>
+        © 2026 Joshua A. • JoshGold Info Tech
+    </p>
+
+</div>
+
+</footer>
+
+
+<script>
+
+function checkout(event) {
+
+    event.preventDefault();
+
+    alert(
+        "Your Paystack checkout link will be connected here when your checkout URL is ready."
+    );
+
+}
+
+</script>
+
 </body>
 </html>
